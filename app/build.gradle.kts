@@ -22,6 +22,7 @@ android {
 
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("debug") // Pizdec)))
             isMinifyEnabled = false
         }
     }
