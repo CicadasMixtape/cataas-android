@@ -20,7 +20,7 @@ import cicadas.mixtape.cataas.screens.SaysScreen
 
 // Бар навигации
 @Composable
-fun NavigationBar(currentRoute: String, onSelectRoute: (String) -> Unit) {
+fun CataasNavigationBar(currentRoute: String, onSelectRoute: (String) -> Unit) {
     NavigationBar {
         // Навигация на первую страницу (Cats)
         NavigationBarItem(
@@ -51,7 +51,7 @@ fun NavigationBar(currentRoute: String, onSelectRoute: (String) -> Unit) {
 // Хост навигации
 // Нужен чтобы менять скрины между друг-другом
 @Composable
-fun NavHost(
+fun CataasNavHost(
     navController: NavHostController,
     modifier: Modifier
 ) {

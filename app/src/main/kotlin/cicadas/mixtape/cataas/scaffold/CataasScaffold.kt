@@ -7,18 +7,18 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import cicadas.mixtape.cataas.navigation.NavHost
-import cicadas.mixtape.cataas.navigation.NavigationBar
+import cicadas.mixtape.cataas.navigation.CataasNavHost
+import cicadas.mixtape.cataas.navigation.CataasNavigationBar
 
 @Composable
-fun Scaffold() {
+fun CataasScaffold() {
     val navController = rememberNavController()
     val navCurrentBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navCurrentBackStackEntry?.destination?.route ?: "cats"
 
     Scaffold(
         bottomBar = {
-            NavigationBar(currentRoute) {
+            CataasNavigationBar(currentRoute) {
                 navController.navigate(it) {
                     popUpTo(navController.graph.startDestinationId) {
                         saveState = true
@@ -30,6 +30,6 @@ fun Scaffold() {
             }
         }
     ) {
-        NavHost(navController, Modifier.padding(it))
+        CataasNavHost(navController, Modifier.padding(it))
     }
 }
